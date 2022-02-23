@@ -1,0 +1,23 @@
+{
+  "name": "zombierain-ui",
+  "version": "1.0.0",
+  "description": "Zombie Rain UI",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "@stomp/stompjs": "^6.1.2",
+    "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.0.0",
+    "phaser": "^3.55.2",
+    "webpack": "^5.64.4"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.2"
+  },
+  "scripts": {
+    "test": "rm -rf ./dist/* && npx webpack && cp -r ./public/* ./dist/. && http-server ./dist/ -p 8080 -S -C ssl-cert.pem -K ssl-key.pem",
+    "build": "rm -rf ./dist/* && npx webpack && cp -r ./public/* ./dist/.",
+    "start": "http-server ./dist/ -p 8080 -S -C ssl-cert.pem -K ssl-key.pem"
+  },
+  "author": "Ivan Penev",
+  "license": "ISC"
+}
